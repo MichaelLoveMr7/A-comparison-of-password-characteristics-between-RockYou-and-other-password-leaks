@@ -1,0 +1,12 @@
+,0,1
+0,N_1_to_last2_ALL_Users_percent/User count,0.2069755657755015
+1,U_1_to_last2_ALL_Users_percent/User count,0.011638186444358085
+2,S_1_to_last2_ALL_Users_percent/User count,0.011254383160954326
+3,User_count(for count in passwords.index),16471620.0
+4,N_1_to_last2_ALL,29440872.0
+5,U_1_to_last2_ALL,1721055.0
+6,S_1_to_last2_ALL,2971880.0
+7,length_ALL(= length_ALL + len(password)),140217397.0
+8,N_1_to_last2_ALL/length_ALL,0.20996590030836187
+9,U_1_to_last2_ALL/length_ALL,0.01227419019909491
+10,S_1_to_last2_ALL/length_ALL,0.02119480223983904
