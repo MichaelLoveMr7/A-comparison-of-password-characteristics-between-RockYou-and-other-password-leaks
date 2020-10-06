@@ -1,0 +1,9 @@
+,0,1
+0,User_count_SUM,1342406300
+1,N_1_to_last2_ALL_SUM,2575988485
+2,U_1_to_last2_ALL_SUM,150868530
+3,S_1_to_last2_ALL_SUM,226289078
+4,length_password_ALL_SUM,11410940589
+5,N_1_to_last2_ALL_SUM/length_password_ALL_SUM,0.225747252
+6,U_1_to_last2_ALL_SUM/length_password_ALL_SUM,0.013221393
+7,S_1_to_last2_ALL_SUM/length_password_ALL_SUM,0.019830887
