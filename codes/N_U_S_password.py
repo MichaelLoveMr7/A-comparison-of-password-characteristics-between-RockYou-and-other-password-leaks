@@ -7,56 +7,35 @@ Created on Wed Aug 26 15:27:17 2020
 """
 
 import re
-import pandas as pd
-from zxcvbn import zxcvbn
-from pandas import DataFrame
-import numpy as np
-    
-
-def zxcvbn_array(passwords):
- 
-    passwords = pd.DataFrame(passwords)
-
-    row = 0
-    zxcvbn_ALL1 = 0  
-    zxcvbn_average = 0
-    len_passwords = len(passwords)
-    print("len_passwords", len_passwords) 
-    if len_passwords == 0:
-        return 0, 0
-    if len_passwords > 0: 
-        print("1")
-        while (row < len_passwords):
-            #print("2")
-            password = passwords.iloc[row, 0]
-            
-            #print("row:", row)
-            #get the zxcvbn score
-            if password is not None :
-                if pd.isnull(password) is False and len(password) < 20:
-                    zxcvbn_results=zxcvbn(password)
-                    zxcvbn_score = zxcvbn_results.get('score')
-                    #print(zxcvbn_score,row)
-                    #print('zxcvbn_score',zxcvbn_score)
-                    zxcvbn_ALL1 = zxcvbn_ALL1 + zxcvbn_score            
-                row = row + 1    
-                print("up to:", row)
-        if row != 0:         
-            zxcvbn_average = zxcvbn_ALL1/row
-        print("row",row)
-        print("3")
-    print("len_passwords",len_passwords)
-    print("passwords",passwords)
-    return zxcvbn_average, len_passwords
-
-
-
+'''
+# for test
+password= "uu"
+length = 2
+N_1_to_last2 = 0
+U_1_to_last2 = 0
+S_1_to_last2 = 0
+row = 0
+while(row < length -1) :
+       if re.search('[0-9]', password[row]) :
+           N_1_to_last2 = N_1_to_last2 + 1
+           
+       elif re.search('[A-Z]', password[row]):
+           U_1_to_last2 = U_1_to_last2 + 1
+           
+       elif re.search('[a-z]', password[row]):
+           pass
+       
+       else:
+           S_1_to_last2 = S_1_to_last2 + 1
+       row = row + 1
+           
+ #  return N_1_to_last2, U_1_to_last2, S_1_to_last2
+'''
 def N_U_S_password_0toLast(password, length):
    N_0_to_last = 0
    U_0_to_last = 0
    S_0_to_last = 0
    row = 0
-   password= str(password)
    while(row < length) :
        if re.search('[0-9]', password[row]) :
            N_0_to_last = N_0_to_last + 1
@@ -69,8 +48,6 @@ def N_U_S_password_0toLast(password, length):
        
        else:
            S_0_to_last = S_0_to_last + 1
-           
-       row = row + 1
            
    return N_0_to_last, U_0_to_last, S_0_to_last
 
@@ -93,7 +70,6 @@ def N_U_S_ALL_password(password, length):
        else:
            S_1_to_last2 = S_1_to_last2 + 1
            
-       row = row + 1
    return N_1_to_last2, U_1_to_last2, S_1_to_last2
            
 def N_U_S_password_odd_even(password, length):
